@@ -1,0 +1,10 @@
+# ninja log v6
+8	882	7576266457762535	TextEditor_autogen/timestamp	110f8f5e46c70455
+8	882	7576266457762535	TextEditor_autogen/mocs_compilation.cpp	110f8f5e46c70455
+8	882	7576266457762535	C:/Users/anubh/QtProjects/TextEditor/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/TextEditor_autogen/timestamp	110f8f5e46c70455
+8	882	7576266457762535	C:/Users/anubh/QtProjects/TextEditor/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/TextEditor_autogen/mocs_compilation.cpp	110f8f5e46c70455
+902	3631	7576266458848209	CMakeFiles/TextEditor.dir/mainwindow.cpp.obj	28f214e6c05093c5
+890	3669	7576266458660133	CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.obj	8467b31d18104f5c
+895	3688	7576266458660133	CMakeFiles/TextEditor.dir/main.cpp.obj	140e157a4946fa54
+908	4053	7576266458910365	CMakeFiles/TextEditor.dir/texteditor.cpp.obj	a76d216aa7757dc4
+4054	4339	7576266490369590	TextEditor.exe	ebf507495578338e
