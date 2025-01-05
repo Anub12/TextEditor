@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTextEdit>
+#include "syntaxhighlighter.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -19,5 +21,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    QTextEdit *editor;
+    SyntaxHighlighter *highlighter;
 };
 #endif // MAINWINDOW_H

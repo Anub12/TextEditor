@@ -272,6 +272,12 @@
 			null
 		],
 		[
+			"C:/Users/anubh/QtProjects/TextEditor/syntaxhighlighter.h",
+			"MU",
+			"EWIEGA46WW/moc_syntaxhighlighter.cpp",
+			null
+		],
+		[
 			"C:/Users/anubh/QtProjects/TextEditor/texteditor.h",
 			"MU",
 			"EWIEGA46WW/moc_texteditor.cpp",
@@ -351,6 +357,11 @@
 	[
 		[ "C:/Users/anubh/QtProjects/TextEditor/main.cpp", "MU", null ],
 		[ "C:/Users/anubh/QtProjects/TextEditor/mainwindow.cpp", "MU", null ],
+		[
+			"C:/Users/anubh/QtProjects/TextEditor/syntaxhighlighter.cpp",
+			"MU",
+			null
+		],
 		[ "C:/Users/anubh/QtProjects/TextEditor/texteditor.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],

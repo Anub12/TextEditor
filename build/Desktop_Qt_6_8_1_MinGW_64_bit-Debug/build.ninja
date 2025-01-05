@@ -81,6 +81,14 @@ build CMakeFiles/TextEditor.dir/texteditor.cpp.obj: CXX_COMPILER__TextEditor_uns
   OBJECT_DIR = CMakeFiles\TextEditor.dir
   OBJECT_FILE_DIR = CMakeFiles\TextEditor.dir
 
+build CMakeFiles/TextEditor.dir/syntaxhighlighter.cpp.obj: CXX_COMPILER__TextEditor_unscanned_Debug C$:/Users/anubh/QtProjects/TextEditor/syntaxhighlighter.cpp || cmake_object_order_depends_target_TextEditor
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\TextEditor.dir\syntaxhighlighter.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/anubh/QtProjects/TextEditor/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/TextEditor_autogen/include -isystem C:/Qt/6.8.1/mingw_64/include/QtCore -isystem C:/Qt/6.8.1/mingw_64/include -isystem C:/Qt/6.8.1/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.8.1/mingw_64/include/QtWidgets -isystem C:/Qt/6.8.1/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\TextEditor.dir
+  OBJECT_FILE_DIR = CMakeFiles\TextEditor.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target TextEditor
@@ -89,7 +97,7 @@ build CMakeFiles/TextEditor.dir/texteditor.cpp.obj: CXX_COMPILER__TextEditor_uns
 #############################################
 # Link the executable TextEditor.exe
 
-build TextEditor.exe: CXX_EXECUTABLE_LINKER__TextEditor_Debug CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.obj CMakeFiles/TextEditor.dir/main.cpp.obj CMakeFiles/TextEditor.dir/mainwindow.cpp.obj CMakeFiles/TextEditor.dir/texteditor.cpp.obj | C$:/Qt/6.8.1/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.8.1/mingw_64/lib/libQt6Gui.a C$:/Qt/6.8.1/mingw_64/lib/libQt6Core.a C$:/Qt/6.8.1/mingw_64/lib/libQt6EntryPoint.a || TextEditor_autogen TextEditor_autogen_timestamp_deps
+build TextEditor.exe: CXX_EXECUTABLE_LINKER__TextEditor_Debug CMakeFiles/TextEditor.dir/TextEditor_autogen/mocs_compilation.cpp.obj CMakeFiles/TextEditor.dir/main.cpp.obj CMakeFiles/TextEditor.dir/mainwindow.cpp.obj CMakeFiles/TextEditor.dir/texteditor.cpp.obj CMakeFiles/TextEditor.dir/syntaxhighlighter.cpp.obj | C$:/Qt/6.8.1/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.8.1/mingw_64/lib/libQt6Gui.a C$:/Qt/6.8.1/mingw_64/lib/libQt6Core.a C$:/Qt/6.8.1/mingw_64/lib/libQt6EntryPoint.a || TextEditor_autogen TextEditor_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_FLAGS = -mwindows
   LINK_LIBRARIES = C:/Qt/6.8.1/mingw_64/lib/libQt6Widgets.a  C:/Qt/6.8.1/mingw_64/lib/libQt6Gui.a  C:/Qt/6.8.1/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -lmingw32  C:/Qt/6.8.1/mingw_64/lib/libQt6EntryPoint.a  -lshell32  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
