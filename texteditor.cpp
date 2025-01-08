@@ -1,17 +1,113 @@
 #include "texteditor.h"
+#include "linenumberarea.h"
 #include <QMenuBar>
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QFile>
 #include <QTextStream>
+#include <QAction>
+#include <QPainter>
+#include <QTextBlock>
+#include <QScrollBar>
+#include <QAbstractTextDocumentLayout>
 
 TextEditor::TextEditor(QWidget *parent) : QMainWindow(parent) {
     textEdit = new QTextEdit(this);
     setCentralWidget(textEdit);
 
+    // Set tab stop width to 4 spaces
+    QFontMetrics metrics(textEdit->font());
+    textEdit->setTabStopDistance(4 * metrics.horizontalAdvance(' '));
+
     highlighter = new SyntaxHighlighter(textEdit->document());
 
+    lineNumberArea = new LineNumberArea(this);
+
+    connect(textEdit->document(), &QTextDocument::blockCountChanged, this, &TextEditor::updateLineNumberAreaWidth);
+    connect(textEdit->verticalScrollBar(), &QScrollBar::valueChanged, this, [this]() { updateLineNumberArea(textEdit->rect(), 0); });
+    connect(textEdit, &QTextEdit::cursorPositionChanged, this, &TextEditor::highlightCurrentLine);
+
+    updateLineNumberAreaWidth(0);
+    highlightCurrentLine();
+
     createMenus();
+}
+
+int TextEditor::lineNumberAreaWidth() {
+    int digits = 1;
+    int max = qMax(1, textEdit->document()->blockCount());
+    while (max >= 10) {
+        max /= 10;
+        ++digits;
+    }
+
+    int space = 3 + textEdit->fontMetrics().horizontalAdvance(QLatin1Char('9')) * digits;
+
+    return space;
+}
+
+void TextEditor::updateLineNumberAreaWidth(int /* newBlockCount */) {
+    textEdit->setContentsMargins(lineNumberAreaWidth(), 0, 0, 0);
+}
+
+void TextEditor::updateLineNumberArea(const QRect &rect, int dy) {
+    if (dy)
+        lineNumberArea->scroll(0, dy);
+    else
+        lineNumberArea->update(0, rect.y(), lineNumberArea->width(), rect.height());
+
+    if (rect.contains(textEdit->viewport()->rect()))
+        updateLineNumberAreaWidth(0);
+}
+
+void TextEditor::resizeEvent(QResizeEvent *e) {
+    QMainWindow::resizeEvent(e);
+
+    QRect cr = contentsRect();
+    lineNumberArea->setGeometry(QRect(cr.left(), cr.top(), lineNumberAreaWidth(), cr.height()));
+}
+
+void TextEditor::highlightCurrentLine() {
+    QList<QTextEdit::ExtraSelection> extraSelections;
+
+    if (!textEdit->isReadOnly()) {
+        QTextEdit::ExtraSelection selection;
+
+        QColor lineColor = QColor(Qt::yellow).lighter(160);
+
+        selection.format.setBackground(lineColor);
+        selection.format.setProperty(QTextFormat::FullWidthSelection, true);
+        selection.cursor = textEdit->textCursor();
+        selection.cursor.clearSelection();
+        extraSelections.append(selection);
+    }
+
+    textEdit->setExtraSelections(extraSelections);
+}
+
+void TextEditor::lineNumberAreaPaintEvent(QPaintEvent *event) {
+    QPainter painter(lineNumberArea);
+    painter.fillRect(event->rect(), Qt::lightGray);
+
+    QTextBlock block = textEdit->document()->begin();
+    QAbstractTextDocumentLayout *layout = textEdit->document()->documentLayout();
+    int blockNumber = block.blockNumber();
+    QPointF offset = layout->contentOffset(); // Use contentOffset() method
+    int top = static_cast<int>(layout->blockBoundingRect(block).translated(offset).top());
+    int bottom = top + static_cast<int>(layout->blockBoundingRect(block).height());
+
+    while (block.isValid() && top <= event->rect().bottom()) {
+        if (block.isVisible() && bottom >= event->rect().top()) {
+            QString number = QString::number(blockNumber + 1);
+            painter.setPen(Qt::black);
+            painter.drawText(0, top, lineNumberArea->width(), textEdit->fontMetrics().height(), Qt::AlignRight, number);
+        }
+
+        block = block.next();
+        top = bottom;
+        bottom = top + static_cast<int>(layout->blockBoundingRect(block).height());
+        ++blockNumber;
+    }
 }
 
 void TextEditor::openFile() {
@@ -53,4 +149,21 @@ void TextEditor::createMenus() {
 
     QAction *exitAction = fileMenu->addAction("Exit");
     connect(exitAction, &QAction::triggered, this, &QWidget::close);
+
+    QMenu *editMenu = menuBar()->addMenu("Edit");
+
+    QAction *cutAction = editMenu->addAction("Cut");
+    connect(cutAction, &QAction::triggered, textEdit, &QTextEdit::cut);
+
+    QAction *copyAction = editMenu->addAction("Copy");
+    connect(copyAction, &QAction::triggered, textEdit, &QTextEdit::copy);
+
+    QAction *pasteAction = editMenu->addAction("Paste");
+    connect(pasteAction, &QAction::triggered, textEdit, &QTextEdit::paste);
+
+    QAction *undoAction = editMenu->addAction("Undo");
+    connect(undoAction, &QAction::triggered, textEdit, &QTextEdit::undo);
+
+    QAction *redoAction = editMenu->addAction("Redo");
+    connect(redoAction, &QAction::triggered, textEdit, &QTextEdit::redo);
 }

@@ -188,6 +188,7 @@ TextEditor_autogen/timestamp: \
 	C:/Qt/6.8.1/mingw_64/include/QtGui/qwindowdefs_win.h \
 	C:/Qt/6.8.1/mingw_64/include/QtWidgets/QMainWindow \
 	C:/Qt/6.8.1/mingw_64/include/QtWidgets/QTextEdit \
+	C:/Qt/6.8.1/mingw_64/include/QtWidgets/QWidget \
 	C:/Qt/6.8.1/mingw_64/include/QtWidgets/qabstractscrollarea.h \
 	C:/Qt/6.8.1/mingw_64/include/QtWidgets/qframe.h \
 	C:/Qt/6.8.1/mingw_64/include/QtWidgets/qmainwindow.h \
@@ -580,6 +581,7 @@ TextEditor_autogen/timestamp: \
 	C:/Users/anubh/QtProjects/TextEditor/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeRCCompiler.cmake \
 	C:/Users/anubh/QtProjects/TextEditor/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeSystem.cmake \
 	C:/Users/anubh/QtProjects/TextEditor/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/TextEditor_autogen/moc_predefs.h \
+	C:/Users/anubh/QtProjects/TextEditor/linenumberarea.h \
 	C:/Users/anubh/QtProjects/TextEditor/main.cpp \
 	C:/Users/anubh/QtProjects/TextEditor/mainwindow.cpp \
 	C:/Users/anubh/QtProjects/TextEditor/mainwindow.h \

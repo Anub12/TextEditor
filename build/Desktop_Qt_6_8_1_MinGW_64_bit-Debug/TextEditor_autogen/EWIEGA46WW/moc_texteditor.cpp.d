@@ -189,6 +189,7 @@ C:/Users/anubh/QtProjects/TextEditor/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/T
   C:/Qt/6.8.1/mingw_64/include/QtGui/qwindowdefs_win.h \
   C:/Qt/6.8.1/mingw_64/include/QtWidgets/QMainWindow \
   C:/Qt/6.8.1/mingw_64/include/QtWidgets/QTextEdit \
+  C:/Qt/6.8.1/mingw_64/include/QtWidgets/QWidget \
   C:/Qt/6.8.1/mingw_64/include/QtWidgets/qabstractscrollarea.h \
   C:/Qt/6.8.1/mingw_64/include/QtWidgets/qframe.h \
   C:/Qt/6.8.1/mingw_64/include/QtWidgets/qmainwindow.h \
@@ -405,4 +406,6 @@ C:/Users/anubh/QtProjects/TextEditor/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/T
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/time.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
-  C:/Users/anubh/QtProjects/TextEditor/syntaxhighlighter.h
+  C:/Users/anubh/QtProjects/TextEditor/linenumberarea.h \
+  C:/Users/anubh/QtProjects/TextEditor/syntaxhighlighter.h \
+  C:/Users/anubh/QtProjects/TextEditor/texteditor.h
