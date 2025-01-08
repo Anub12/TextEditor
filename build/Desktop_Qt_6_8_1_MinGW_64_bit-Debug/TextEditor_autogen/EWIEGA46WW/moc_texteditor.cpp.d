@@ -1,5 +1,11 @@
 C:/Users/anubh/QtProjects/TextEditor/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/TextEditor_autogen/EWIEGA46WW/moc_texteditor.cpp: C:/Users/anubh/QtProjects/TextEditor/texteditor.h \
   C:/Users/anubh/QtProjects/TextEditor/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/TextEditor_autogen/moc_predefs.h \
+  C:/Qt/6.8.1/mingw_64/include/QtCore/QList \
+  C:/Qt/6.8.1/mingw_64/include/QtCore/QObject \
+  C:/Qt/6.8.1/mingw_64/include/QtCore/QRect \
+  C:/Qt/6.8.1/mingw_64/include/QtCore/QRegularExpression \
+  C:/Qt/6.8.1/mingw_64/include/QtCore/QSize \
+  C:/Qt/6.8.1/mingw_64/include/QtCore/QSizeF \
   C:/Qt/6.8.1/mingw_64/include/QtCore/q20functional.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/q20iterator.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/q20memory.h \
@@ -30,10 +36,16 @@ C:/Users/anubh/QtProjects/TextEditor/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/T
   C:/Qt/6.8.1/mingw_64/include/QtCore/qcontainerinfo.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qcontainertools_impl.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qcontiguouscache.h \
+  C:/Qt/6.8.1/mingw_64/include/QtCore/qcoreapplication.h \
+  C:/Qt/6.8.1/mingw_64/include/QtCore/qcoreapplication_platform.h \
+  C:/Qt/6.8.1/mingw_64/include/QtCore/qcoreevent.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qdarwinhelpers.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qdatastream.h \
+  C:/Qt/6.8.1/mingw_64/include/QtCore/qdeadlinetimer.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qdebug.h \
+  C:/Qt/6.8.1/mingw_64/include/QtCore/qelapsedtimer.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qendian.h \
+  C:/Qt/6.8.1/mingw_64/include/QtCore/qeventloop.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qexceptionhandling.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qflags.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qfloat16.h \
@@ -45,12 +57,14 @@ C:/Users/anubh/QtProjects/TextEditor/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/T
   C:/Qt/6.8.1/mingw_64/include/QtCore/qglobalstatic.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qhash.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qhashfunctions.h \
+  C:/Qt/6.8.1/mingw_64/include/QtCore/qiodevice.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qiodevicebase.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qiterable.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qiterator.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qlatin1stringview.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qline.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qlist.h \
+  C:/Qt/6.8.1/mingw_64/include/QtCore/qlocale.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qlogging.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qmalloc.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qmap.h \
@@ -60,6 +74,7 @@ C:/Users/anubh/QtProjects/TextEditor/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/T
   C:/Qt/6.8.1/mingw_64/include/QtCore/qmetatype.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qminmax.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qnamespace.h \
+  C:/Qt/6.8.1/mingw_64/include/QtCore/qnativeinterface.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qnumeric.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qobject.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qobject_impl.h \
@@ -71,6 +86,7 @@ C:/Users/anubh/QtProjects/TextEditor/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/T
   C:/Qt/6.8.1/mingw_64/include/QtCore/qprocessordetection.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qrect.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qrefcount.h \
+  C:/Qt/6.8.1/mingw_64/include/QtCore/qregularexpression.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qscopedpointer.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qscopeguard.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qset.h \
@@ -121,34 +137,54 @@ C:/Users/anubh/QtProjects/TextEditor/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/T
   C:/Qt/6.8.1/mingw_64/include/QtCore/qversiontagging.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qxptype_traits.h \
   C:/Qt/6.8.1/mingw_64/include/QtCore/qyieldcpu.h \
+  C:/Qt/6.8.1/mingw_64/include/QtGui/QSyntaxHighlighter \
+  C:/Qt/6.8.1/mingw_64/include/QtGui/QTextCharFormat \
+  C:/Qt/6.8.1/mingw_64/include/QtGui/QTransform \
   C:/Qt/6.8.1/mingw_64/include/QtGui/qaction.h \
   C:/Qt/6.8.1/mingw_64/include/QtGui/qbitmap.h \
   C:/Qt/6.8.1/mingw_64/include/QtGui/qbrush.h \
   C:/Qt/6.8.1/mingw_64/include/QtGui/qcolor.h \
   C:/Qt/6.8.1/mingw_64/include/QtGui/qcursor.h \
+  C:/Qt/6.8.1/mingw_64/include/QtGui/qevent.h \
+  C:/Qt/6.8.1/mingw_64/include/QtGui/qeventpoint.h \
   C:/Qt/6.8.1/mingw_64/include/QtGui/qfont.h \
+  C:/Qt/6.8.1/mingw_64/include/QtGui/qfontdatabase.h \
   C:/Qt/6.8.1/mingw_64/include/QtGui/qfontinfo.h \
   C:/Qt/6.8.1/mingw_64/include/QtGui/qfontmetrics.h \
+  C:/Qt/6.8.1/mingw_64/include/QtGui/qglyphrun.h \
+  C:/Qt/6.8.1/mingw_64/include/QtGui/qguiapplication.h \
+  C:/Qt/6.8.1/mingw_64/include/QtGui/qguiapplication_platform.h \
   C:/Qt/6.8.1/mingw_64/include/QtGui/qicon.h \
   C:/Qt/6.8.1/mingw_64/include/QtGui/qimage.h \
+  C:/Qt/6.8.1/mingw_64/include/QtGui/qinputdevice.h \
+  C:/Qt/6.8.1/mingw_64/include/QtGui/qinputmethod.h \
   C:/Qt/6.8.1/mingw_64/include/QtGui/qkeysequence.h \
   C:/Qt/6.8.1/mingw_64/include/QtGui/qpaintdevice.h \
   C:/Qt/6.8.1/mingw_64/include/QtGui/qpalette.h \
   C:/Qt/6.8.1/mingw_64/include/QtGui/qpen.h \
   C:/Qt/6.8.1/mingw_64/include/QtGui/qpixelformat.h \
   C:/Qt/6.8.1/mingw_64/include/QtGui/qpixmap.h \
+  C:/Qt/6.8.1/mingw_64/include/QtGui/qpointingdevice.h \
   C:/Qt/6.8.1/mingw_64/include/QtGui/qpolygon.h \
+  C:/Qt/6.8.1/mingw_64/include/QtGui/qrawfont.h \
   C:/Qt/6.8.1/mingw_64/include/QtGui/qregion.h \
   C:/Qt/6.8.1/mingw_64/include/QtGui/qrgb.h \
   C:/Qt/6.8.1/mingw_64/include/QtGui/qrgba64.h \
+  C:/Qt/6.8.1/mingw_64/include/QtGui/qscreen.h \
+  C:/Qt/6.8.1/mingw_64/include/QtGui/qscreen_platform.h \
+  C:/Qt/6.8.1/mingw_64/include/QtGui/qsyntaxhighlighter.h \
   C:/Qt/6.8.1/mingw_64/include/QtGui/qtextcursor.h \
   C:/Qt/6.8.1/mingw_64/include/QtGui/qtextdocument.h \
   C:/Qt/6.8.1/mingw_64/include/QtGui/qtextformat.h \
+  C:/Qt/6.8.1/mingw_64/include/QtGui/qtextlayout.h \
+  C:/Qt/6.8.1/mingw_64/include/QtGui/qtextobject.h \
   C:/Qt/6.8.1/mingw_64/include/QtGui/qtextoption.h \
   C:/Qt/6.8.1/mingw_64/include/QtGui/qtgui-config.h \
   C:/Qt/6.8.1/mingw_64/include/QtGui/qtguiexports.h \
   C:/Qt/6.8.1/mingw_64/include/QtGui/qtguiglobal.h \
   C:/Qt/6.8.1/mingw_64/include/QtGui/qtransform.h \
+  C:/Qt/6.8.1/mingw_64/include/QtGui/qvector2d.h \
+  C:/Qt/6.8.1/mingw_64/include/QtGui/qvectornd.h \
   C:/Qt/6.8.1/mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.8.1/mingw_64/include/QtGui/qwindowdefs_win.h \
   C:/Qt/6.8.1/mingw_64/include/QtWidgets/QMainWindow \
@@ -368,4 +404,5 @@ C:/Users/anubh/QtProjects/TextEditor/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/T
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/sys/types.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/time.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
-  C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h
+  C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
+  C:/Users/anubh/QtProjects/TextEditor/syntaxhighlighter.h

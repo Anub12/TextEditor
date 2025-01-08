@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-53adfe4ff3fd96d739a0.json",
+					"jsonFile" : "directory-.-Debug-e2d74c9aa238a087cfd3.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "TextEditor::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-TextEditor-Debug-3804b54128c31a8ebce8.json",
+					"jsonFile" : "target-TextEditor-Debug-8af0621badd4697e5a74.json",
 					"name" : "TextEditor",
 					"projectIndex" : 0
 				},

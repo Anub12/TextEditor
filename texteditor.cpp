@@ -9,6 +9,8 @@ TextEditor::TextEditor(QWidget *parent) : QMainWindow(parent) {
     textEdit = new QTextEdit(this);
     setCentralWidget(textEdit);
 
+    highlighter = new SyntaxHighlighter(textEdit->document());
+
     createMenus();
 }
 

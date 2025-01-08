@@ -139,7 +139,6 @@ C:/Users/anubh/QtProjects/TextEditor/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/T
   C:/Qt/6.8.1/mingw_64/include/QtCore/qyieldcpu.h \
   C:/Qt/6.8.1/mingw_64/include/QtGui/QSyntaxHighlighter \
   C:/Qt/6.8.1/mingw_64/include/QtGui/QTextCharFormat \
-  C:/Qt/6.8.1/mingw_64/include/QtGui/QTextDocument \
   C:/Qt/6.8.1/mingw_64/include/QtGui/QTransform \
   C:/Qt/6.8.1/mingw_64/include/QtGui/qbrush.h \
   C:/Qt/6.8.1/mingw_64/include/QtGui/qcolor.h \

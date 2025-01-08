@@ -138,7 +138,6 @@ TextEditor_autogen/timestamp: \
 	C:/Qt/6.8.1/mingw_64/include/QtCore/qyieldcpu.h \
 	C:/Qt/6.8.1/mingw_64/include/QtGui/QSyntaxHighlighter \
 	C:/Qt/6.8.1/mingw_64/include/QtGui/QTextCharFormat \
-	C:/Qt/6.8.1/mingw_64/include/QtGui/QTextDocument \
 	C:/Qt/6.8.1/mingw_64/include/QtGui/QTransform \
 	C:/Qt/6.8.1/mingw_64/include/QtGui/qaction.h \
 	C:/Qt/6.8.1/mingw_64/include/QtGui/qbitmap.h \

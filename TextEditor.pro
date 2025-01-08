@@ -8,11 +8,13 @@ TEMPLATE = app
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    syntaxhighlighter.cpp
+    syntaxhighlighter.cpp \
+    texteditor.cpp
 
 HEADERS += \
     mainwindow.h \
-    syntaxhighlighter.h
+    syntaxhighlighter.h \
+    texteditor.h
 
 FORMS += \
     mainwindow.ui

@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QTextEdit>
+#include "syntaxhighlighter.h"
 
 class TextEditor : public QMainWindow {
     Q_OBJECT
@@ -16,6 +17,7 @@ private slots:
 
 private:
     QTextEdit *textEdit;
+    SyntaxHighlighter *highlighter;
     void createMenus();
 };
 
