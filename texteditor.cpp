@@ -91,8 +91,8 @@ void TextEditor::lineNumberAreaPaintEvent(QPaintEvent *event) {
 
     QTextBlock block = textEdit->document()->begin();
     QAbstractTextDocumentLayout *layout = textEdit->document()->documentLayout();
-    int blockNumber = block.blockNumber();
     QPointF offset = layout->contentOffset(); // Use contentOffset() method
+    int blockNumber = block.blockNumber();
     int top = static_cast<int>(layout->blockBoundingRect(block).translated(offset).top());
     int bottom = top + static_cast<int>(layout->blockBoundingRect(block).height());
 
