@@ -407,5 +407,4 @@ C:/Users/anubh/QtProjects/TextEditor/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/T
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
   C:/Users/anubh/QtProjects/TextEditor/linenumberarea.h \
-  C:/Users/anubh/QtProjects/TextEditor/syntaxhighlighter.h \
-  C:/Users/anubh/QtProjects/TextEditor/texteditor.h
+  C:/Users/anubh/QtProjects/TextEditor/syntaxhighlighter.h

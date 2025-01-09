@@ -21,6 +21,8 @@ set(PROJECT_SOURCES
         texteditor.h
         syntaxhighlighter.cpp
         syntaxhighlighter.h
+        linenumberarea.cpp
+        linenumberarea.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

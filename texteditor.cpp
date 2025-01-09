@@ -89,23 +89,21 @@ void TextEditor::lineNumberAreaPaintEvent(QPaintEvent *event) {
     QPainter painter(lineNumberArea);
     painter.fillRect(event->rect(), Qt::lightGray);
 
-    QTextBlock block = textEdit->document()->begin();
-    QAbstractTextDocumentLayout *layout = textEdit->document()->documentLayout();
-    QPointF offset = layout->contentOffset(); // Use contentOffset() method
+    QTextBlock block = textEdit->document()->firstBlock();
     int blockNumber = block.blockNumber();
-    int top = static_cast<int>(layout->blockBoundingRect(block).translated(offset).top());
-    int bottom = top + static_cast<int>(layout->blockBoundingRect(block).height());
+    int top = static_cast<int>(textEdit->document()->documentLayout()->blockBoundingRect(block).translated(0, -textEdit->verticalScrollBar()->value()).top());
+    int bottom = top + static_cast<int>(textEdit->document()->documentLayout()->blockBoundingRect(block).height());
 
     while (block.isValid() && top <= event->rect().bottom()) {
         if (block.isVisible() && bottom >= event->rect().top()) {
             QString number = QString::number(blockNumber + 1);
             painter.setPen(Qt::black);
-            painter.drawText(0, top, lineNumberArea->width(), textEdit->fontMetrics().height(), Qt::AlignRight, number);
+            painter.drawText(0, top, lineNumberArea->width(), fontMetrics().height(), Qt::AlignRight, number);
         }
 
         block = block.next();
         top = bottom;
-        bottom = top + static_cast<int>(layout->blockBoundingRect(block).height());
+        bottom = top + static_cast<int>(textEdit->document()->documentLayout()->blockBoundingRect(block).height());
         ++blockNumber;
     }
 }

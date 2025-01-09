@@ -2,7 +2,6 @@
 #define LINENUMBERAREA_H
 
 #include <QWidget>
-#include "texteditor.h"
 
 class TextEditor;
 

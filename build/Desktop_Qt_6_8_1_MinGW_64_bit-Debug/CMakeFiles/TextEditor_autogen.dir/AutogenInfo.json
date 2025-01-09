@@ -266,6 +266,12 @@
 	"HEADERS" : 
 	[
 		[
+			"C:/Users/anubh/QtProjects/TextEditor/linenumberarea.h",
+			"MU",
+			"EWIEGA46WW/moc_linenumberarea.cpp",
+			null
+		],
+		[
 			"C:/Users/anubh/QtProjects/TextEditor/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
@@ -355,6 +361,7 @@
 	"SETTINGS_FILE" : "C:/Users/anubh/QtProjects/TextEditor/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/CMakeFiles/TextEditor_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "C:/Users/anubh/QtProjects/TextEditor/linenumberarea.cpp", "MU", null ],
 		[ "C:/Users/anubh/QtProjects/TextEditor/main.cpp", "MU", null ],
 		[ "C:/Users/anubh/QtProjects/TextEditor/mainwindow.cpp", "MU", null ],
 		[
