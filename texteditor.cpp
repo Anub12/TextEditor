@@ -10,6 +10,7 @@
 #include <QTextBlock>
 #include <QScrollBar>
 #include <QAbstractTextDocumentLayout>
+#include <QVBoxLayout>
 
 TextEditor::TextEditor(QWidget *parent) : QMainWindow(parent) {
     textEdit = new QTextEdit(this);
@@ -47,7 +48,7 @@ int TextEditor::lineNumberAreaWidth() {
 }
 
 void TextEditor::updateLineNumberAreaWidth(int /* newBlockCount */) {
-    textEdit->setContentsMargins(lineNumberAreaWidth(), 0, 0, 0);
+    textEdit->viewport()->setContentsMargins(lineNumberAreaWidth() + 10, 0, 0, 0); // Add a gap of 10 pixels
 }
 
 void TextEditor::updateLineNumberArea(const QRect &rect, int dy) {
@@ -98,7 +99,7 @@ void TextEditor::lineNumberAreaPaintEvent(QPaintEvent *event) {
         if (block.isVisible() && bottom >= event->rect().top()) {
             QString number = QString::number(blockNumber + 1);
             painter.setPen(Qt::black);
-            painter.drawText(0, top, lineNumberArea->width(), fontMetrics().height(), Qt::AlignRight, number);
+            painter.drawText(0, top, lineNumberArea->width() - 5, fontMetrics().height(), Qt::AlignRight, number); // Adjust the width to leave a gap
         }
 
         block = block.next();
