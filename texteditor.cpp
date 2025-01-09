@@ -44,11 +44,14 @@ int TextEditor::lineNumberAreaWidth() {
 
     int space = 3 + textEdit->fontMetrics().horizontalAdvance(QLatin1Char('9')) * digits;
 
-    return space;
+    return space + 5; // Add 5 pixels gap
 }
 
 void TextEditor::updateLineNumberAreaWidth(int /* newBlockCount */) {
-    textEdit->viewport()->setContentsMargins(lineNumberAreaWidth() + 10, 0, 0, 0); // Add a gap of 10 pixels
+    int leftMargin = lineNumberAreaWidth() + 10;
+    textEdit->setContentsMargins(leftMargin, 0, 0, 0);
+    QRect cr = contentsRect();
+    lineNumberArea->setGeometry(QRect(cr.left(), cr.top(), lineNumberAreaWidth(), cr.height()));
 }
 
 void TextEditor::updateLineNumberArea(const QRect &rect, int dy) {
@@ -63,7 +66,6 @@ void TextEditor::updateLineNumberArea(const QRect &rect, int dy) {
 
 void TextEditor::resizeEvent(QResizeEvent *e) {
     QMainWindow::resizeEvent(e);
-
     QRect cr = contentsRect();
     lineNumberArea->setGeometry(QRect(cr.left(), cr.top(), lineNumberAreaWidth(), cr.height()));
 }
@@ -90,16 +92,17 @@ void TextEditor::lineNumberAreaPaintEvent(QPaintEvent *event) {
     QPainter painter(lineNumberArea);
     painter.fillRect(event->rect(), Qt::lightGray);
 
-    QTextBlock block = textEdit->document()->firstBlock();
+    QTextBlock block = textEdit->document()->begin();
     int blockNumber = block.blockNumber();
-    int top = static_cast<int>(textEdit->document()->documentLayout()->blockBoundingRect(block).translated(0, -textEdit->verticalScrollBar()->value()).top());
+    int top = static_cast<int>(textEdit->viewport()->geometry().top());
     int bottom = top + static_cast<int>(textEdit->document()->documentLayout()->blockBoundingRect(block).height());
 
     while (block.isValid() && top <= event->rect().bottom()) {
         if (block.isVisible() && bottom >= event->rect().top()) {
             QString number = QString::number(blockNumber + 1);
             painter.setPen(Qt::black);
-            painter.drawText(0, top, lineNumberArea->width() - 5, fontMetrics().height(), Qt::AlignRight, number); // Adjust the width to leave a gap
+            painter.drawText(0, top, lineNumberArea->width(), textEdit->fontMetrics().height(),
+                             Qt::AlignRight, number);
         }
 
         block = block.next();
