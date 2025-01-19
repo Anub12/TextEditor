@@ -3,6 +3,9 @@
 
 #include <QMainWindow>
 #include <QTextEdit>
+#include <QPlainTextEdit>
+#include <QCompleter>
+#include <QStringListModel>
 #include "syntaxhighlighter.h"
 #include "linenumberarea.h"
 
@@ -10,7 +13,7 @@ class TextEditor : public QMainWindow {
     Q_OBJECT
 
 public:
-    TextEditor(QWidget *parent = nullptr);
+    explicit TextEditor(QWidget *parent = nullptr);
     int lineNumberAreaWidth();
     void lineNumberAreaPaintEvent(QPaintEvent *event);
 
@@ -23,11 +26,14 @@ private slots:
     void updateLineNumberAreaWidth(int newBlockCount);
     void highlightCurrentLine();
     void updateLineNumberArea(const QRect &, int);
+    void insertComplete(const QString &completion);
 
 private:
-    QTextEdit *textEdit;
+    QPlainTextEdit *textEdit;
     SyntaxHighlighter *highlighter;
     QWidget *lineNumberArea;
+    QCompleter *completer;
+    QStringListModel *model;
     void createMenus();
 };
 

@@ -140,6 +140,7 @@ C:/Users/anubh/QtProjects/TextEditor/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/T
   C:/Qt/6.8.1/mingw_64/include/QtGui/QSyntaxHighlighter \
   C:/Qt/6.8.1/mingw_64/include/QtGui/QTextCharFormat \
   C:/Qt/6.8.1/mingw_64/include/QtGui/QTransform \
+  C:/Qt/6.8.1/mingw_64/include/QtGui/qabstracttextdocumentlayout.h \
   C:/Qt/6.8.1/mingw_64/include/QtGui/qaction.h \
   C:/Qt/6.8.1/mingw_64/include/QtGui/qbitmap.h \
   C:/Qt/6.8.1/mingw_64/include/QtGui/qbrush.h \
@@ -188,11 +189,13 @@ C:/Users/anubh/QtProjects/TextEditor/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/T
   C:/Qt/6.8.1/mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.8.1/mingw_64/include/QtGui/qwindowdefs_win.h \
   C:/Qt/6.8.1/mingw_64/include/QtWidgets/QMainWindow \
+  C:/Qt/6.8.1/mingw_64/include/QtWidgets/QPlainTextEdit \
   C:/Qt/6.8.1/mingw_64/include/QtWidgets/QTextEdit \
   C:/Qt/6.8.1/mingw_64/include/QtWidgets/QWidget \
   C:/Qt/6.8.1/mingw_64/include/QtWidgets/qabstractscrollarea.h \
   C:/Qt/6.8.1/mingw_64/include/QtWidgets/qframe.h \
   C:/Qt/6.8.1/mingw_64/include/QtWidgets/qmainwindow.h \
+  C:/Qt/6.8.1/mingw_64/include/QtWidgets/qplaintextedit.h \
   C:/Qt/6.8.1/mingw_64/include/QtWidgets/qsizepolicy.h \
   C:/Qt/6.8.1/mingw_64/include/QtWidgets/qtabwidget.h \
   C:/Qt/6.8.1/mingw_64/include/QtWidgets/qtextedit.h \

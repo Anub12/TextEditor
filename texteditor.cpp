@@ -32,6 +32,36 @@ TextEditor::TextEditor(QWidget *parent) : QMainWindow(parent) {
     highlightCurrentLine();
 
     createMenus();
+
+    // Initialize completer and model
+    model = new QStringListModel(this);
+    completer = new QCompleter(model, this);
+    completer->setWidget(textEdit);
+    completer->setCompletionMode(QCompleter:PopupCompletion);
+    completer->setCaseSensitivity(Qt:CaseInsensitive);
+
+    // Set up word list for autocompletion
+    QStringList wordList;
+    wordList << "int" << "float" << "double" << "char" << "class" << "public" << "private" << "protected" << "virtual" << "override";
+    model->setStringList(wordList);
+
+    connect(completer, QOverload<const QString &>::of(&QCompleter::activated), this, &TextEditor::insertCompletion);
+}
+
+void TextEditor::insertCompletion(const QString &completion) {
+    QTextCursor tc = textEdit->textCursor();
+    int extra = completion.length() - completer->completionPrefix().length();
+    tc.movePosition(QTextCursor::Left);
+    tc.movePosition(QTextCursor::EndOfWord);
+    tc.insertText(completion.right(extra));
+    textEdit->setTextCursor(tc);
+}
+
+void TextEditor::keyPressEvent(QKeyEvent *e) {
+    if (completer && completer->popup()->isVisible()) {
+        // The following keys are forwarded by the completer to the widget
+        switch (e->key())
+    }
 }
 
 int TextEditor::lineNumberAreaWidth() {
@@ -47,7 +77,7 @@ int TextEditor::lineNumberAreaWidth() {
     return space + 5; // Add 5 pixels gap
 }
 
-void TextEditor::updateLineNumberAreaWidth(int /* newBlockCount */) {
+void TextEditor::updateLineNumberAreaWidth(int newBlockCount) {
     int leftMargin = lineNumberAreaWidth() + 10;
     textEdit->setContentsMargins(leftMargin, 0, 0, 0);
     QRect cr = contentsRect();
@@ -168,4 +198,63 @@ void TextEditor::createMenus() {
 
     QAction *redoAction = editMenu->addAction("Redo");
     connect(redoAction, &QAction::triggered, textEdit, &QTextEdit::redo);
+}
+
+void TextEditor::insertCompletion(cost QString &completion) {
+    QTextCursor tc = textEdit->textCurosr();
+    int extra = completion.length() - completer->completionPrefix().length();
+    tc.movePosition(QTextCursor::Left);
+    tc.movePosition(QTextCursor::EndOfWord);
+    tc.insertText(completion.right(extra));
+    textEdit->setTextCursor(tc);
+}
+
+void TextEditor::keyPressEvent(QKeyEvent *e) {
+    if (completer && completer->popup()->isVisible()) {
+        // The following keys are forwarded by the completer to the widget
+        switch (e->key()) {
+        case Qt::Key_Enter:
+        case Qt::Key_Return:
+        case Qt::Key_Escape:
+        case Qt::Key_Tab:
+        case Qt::Key_Backtab:
+            e->ignore();
+            return; // Let the completer do default behavior
+        default:
+            break;
+        }
+    }
+
+    bool isShortcut = (e->modifiers() & Qt::ControlModifier) && e->key() == Qt::Key_E; // CTRL+E
+    if (!completer || !isShortcut) // Do not process the shortcut when we have a completer
+        QMainWindow::keyPressEvent(e);
+
+    const bool ctrlOrShift = e->modifiers() & (Qt::ControlModifier | Qt::ShiftModifier);
+    if (!completer || (ctrlOrShift && e->text().isEmpty()))
+        return;
+
+    static QString eow("~!@#$%^&*()_+{}|:\"<>?,./;'[]\\-="); // End of word
+    bool hasModifier = (e->modifiers() != Qt::NoModifier) && !ctrlOrShift;
+    QString completionPrefix = textUnderCursor();
+
+    if (!isShortcut && (hasModifier || e->text().isEmpty() || completionPrefix.length() < 3
+                        || eow.contains(e->text().right(1)))) {
+        completer->popup()->hide();
+        return;
+    }
+
+    if (completionPrefix != completer->completionPrefix()) {
+        completer->setCompletionPrefix(completionPrefix);
+        completer->popup()->setCurrentIndex(completer->completionModel()->index(0, 0));
+    }
+    QRect cr = textEdit->cursorRect();
+    cr.setWidth(completer->popup()->sizeHintForColumn(0)
+                + completer->popup()->verticalScrollBar()->sizeHint().width());
+    completer->complete(cr); // Popup it up!
+}
+
+QString TextEditor::textUnderCursor() const {
+    QTextCursor tc = textEdit->textCursor();
+    tc.select(QTextCursor::WordUnderCursor);
+    return tc.selectedText();
 }
